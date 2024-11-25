@@ -44,7 +44,10 @@ export default function HeroSection() {
             </button>
             <button className="px-[2px] py-[2px] w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-3">
-                <a href="/cv.pdf" download="CV - Giventus Marco.pdf">
+                <a
+                  href="/giventusmarco_cv.pdf"
+                  download="CV - Giventus Marco.pdf"
+                >
                   Download CV
                 </a>
               </span>
