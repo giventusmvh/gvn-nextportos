@@ -37,21 +37,18 @@ export default function HeroSection() {
             professional environment.
           </p>
           <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
-              <a href="https://wa.me/628112958568" target="_blank">
+            <a href="https://wa.me/628112958568" target="_blank">
+              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
                 Hire me
-              </a>
-            </button>
-            <button className="px-[2px] py-[2px] w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-3">
-                <a
-                  href="/giventusmarco_cv.pdf"
-                  download="CV - Giventus Marco.pdf"
-                >
+              </button>
+            </a>
+            <a href="/giventusmarco_cv.pdf" download="CV - Giventus Marco.pdf">
+              <button className="px-[2px] py-[2px] w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
+                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-3">
                   Download CV
-                </a>
-              </span>
-            </button>
+                </span>
+              </button>
+            </a>
           </div>
 
           {/* Social Media Icons */}
