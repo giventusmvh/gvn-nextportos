@@ -2,7 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import TypingAnimation from "./TypeAnimation";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"; // Import icons
+import { FaLinkedin, FaGithub, FaInstagram, FaMailBulk } from "react-icons/fa"; // Import icons
+import { IoMdMail } from "react-icons/io";
 
 export default function HeroSection() {
   return (
@@ -68,6 +69,14 @@ export default function HeroSection() {
               className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-pink-500 to-purple-500  "
             >
               <FaGithub className="text-white text-xl" />
+            </a>
+            <a
+              href="mailto:giventusmrco@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-pink-500 to-purple-500  "
+            >
+              <IoMdMail className="text-white text-xl" />
             </a>
           </div>
         </div>
