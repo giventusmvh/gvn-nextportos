@@ -28,13 +28,13 @@ export default function HeroSection() {
             <TypingAnimation />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-12 lg:text-xl sm:mt-12 sm:max-w-[800px] font-thin">
-            Motivated and dedicated
-            <span className="font-bold text-white"> iOS Developer</span> /
+            I&apos;m an{" "}
+            <span className="font-bold text-white"> iOS Developer</span> and{" "}
             <span className="font-bold text-white"> Fullstack Engineer</span>{" "}
-            seeking an position to apply and expand upon knowledge in the field
-            of computer science and software development. Eager to contribute to
-            innovative projects, dynamic team and gain practical experience in a
-            professional environment.
+            specializing in building dynamic web apps and intuitive iOS
+            solutions using React, Node.js, and Swift. I&apos;m passionate about
+            creating seamless user experiences and delivering high-quality,
+            scalable software.
           </p>
           <div>
             <a href="https://wa.me/628112958568" target="_blank">

@@ -10,14 +10,14 @@ const navLink = [
   { title: "About", href: "#about" },
   { title: "Skill", href: "#skill" },
   { title: "Projects", href: "#project" },
-  //   { title: "Contact", href: "#contact" },
+  { title: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <nav className="fixed top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-90 ">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-3 md:max-w-[1200px]">
+      <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-3 md:max-w-[1400px]">
         <Link href={"/"} className="text-4xl text-white">
           <Image
             src={"/images/sign-white2.png"}
