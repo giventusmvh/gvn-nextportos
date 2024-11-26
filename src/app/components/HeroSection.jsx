@@ -10,8 +10,8 @@ export default function HeroSection() {
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-1">
         <div className="col-span-5 place-self-center mb-4 lg:mt-12 mt-8">
-          <div className="px-[5px] py-[5px] rounded-full bg-[#121212] w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] relative ">
-            <span className="block bg-[#121212]  rounded-full w-[170px] h-[170px] lg:w-[190px] lg:h-[190px] relative ease-in-out duration-200">
+          <div className="px-[2px] py-[2px] rounded-full bg-[#ffffff] w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] relative ">
+            <span className="block bg-[#121212]  rounded-full w-[176px] h-[176px] lg:w-[196px] lg:h-[196px] relative ease-in-out duration-200">
               <Image
                 src="/images/hero-image.png"
                 alt="heroimage"
