@@ -9,20 +9,22 @@ export default function HeroSection() {
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-1">
-        <div className="col-span-5 place-self-center mb-4 lg:mt-12 mt-12">
-          <div className="rounded-full bg-[#181818] w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] relative">
-            <Image
-              src="/images/hero-image.png"
-              alt="heroimage"
-              width={140}
-              height={140}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            />
+        <div className="col-span-5 place-self-center mb-4 lg:mt-12 mt-8">
+          <div className="px-[5px] py-[5px] rounded-full bg-[#121212] w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] relative ">
+            <span className="block bg-[#121212]  rounded-full w-[170px] h-[170px] lg:w-[190px] lg:h-[190px] relative ease-in-out duration-200">
+              <Image
+                src="/images/hero-image.png"
+                alt="heroimage"
+                width={140}
+                height={140}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              />
+            </span>
           </div>
         </div>
         <div className="col-span-7 place-self-center text-center sm:text-center">
           <h1 className="text-white mb-4 text-2xl sm:text-5xl lg:text-5xl font-extrabold">
-            <span className="text-transparent bg-clip-text  bg-gradient-to-r from-purple-600 to-pink-400 hover:bg-slate-200">
+            <span className="text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
               Hello, I&apos;m Giventus Marco{" "}
             </span>
             <br />
@@ -30,8 +32,15 @@ export default function HeroSection() {
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-12 lg:text-xl sm:mt-12 sm:max-w-[800px] font-thin">
             I&apos;m an{" "}
-            <span className="font-bold text-white"> iOS Developer</span> and{" "}
-            <span className="font-bold text-white"> Fullstack Engineer</span>{" "}
+            <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
+              {" "}
+              iOS Developer
+            </span>{" "}
+            and{" "}
+            <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
+              {" "}
+              Fullstack Engineer
+            </span>{" "}
             specializing in building dynamic web apps and intuitive iOS
             solutions using React, Node.js, and Swift. I&apos;m passionate about
             creating seamless user experiences and delivering high-quality,
@@ -39,12 +48,12 @@ export default function HeroSection() {
           </p>
           <div>
             <a href="https://wa.me/628112958568" target="_blank">
-              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
+              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500  to-secondary-500 hover:bg-slate-200 text-white">
                 Hire me
               </button>
             </a>
             <a href="/giventusmarco_cv.pdf" download="CV - Giventus Marco.pdf">
-              <button className="px-[2px] py-[2px] w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
+              <button className="px-[2px] py-[2px] w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500  to-secondary-500 hover:bg-slate-800 text-white mt-3">
                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-3">
                   Download CV
                 </span>
@@ -58,7 +67,7 @@ export default function HeroSection() {
               href="https://www.linkedin.com/in/giventus/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-pink-500 to-purple-500  "
+              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
             >
               <FaLinkedin className="text-white text-xl" />
             </a>
@@ -66,7 +75,7 @@ export default function HeroSection() {
               href="https://github.com/giventusmvh"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-pink-500 to-purple-500  "
+              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
             >
               <FaGithub className="text-white text-xl" />
             </a>
@@ -74,7 +83,7 @@ export default function HeroSection() {
               href="mailto:giventusmrco@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-pink-500 to-purple-500  "
+              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
             >
               <IoMdMail className="text-white text-xl" />
             </a>

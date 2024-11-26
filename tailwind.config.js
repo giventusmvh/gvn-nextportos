@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,10 +9,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       keyframes: {
         slideIn: {
           "0%": { transform: "translateY(-100%)" },
@@ -21,6 +19,11 @@ module.exports = {
         slideIn: "slideIn 0.5s ease-in-out",
       },
     },
+    colors: {
+        ...colors,
+        primary: colors.cyan,
+        secondary: colors.sky,
+      },
   },
   plugins: [],
 };

@@ -192,7 +192,7 @@ const Projects = () => {
         <h1 className="text-white flex justify-center items-center text-md sm:text-md lg:text-md ">
           Check out my
         </h1>
-        <h1 className="text-white flex justify-center items-center text-2xl sm:text-5xl lg:text-5xl font-bold">
+        <h1 className="text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200 flex justify-center items-center text-2xl sm:text-5xl lg:text-5xl font-bold">
           Projects
         </h1>
       </div>

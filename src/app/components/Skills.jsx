@@ -77,7 +77,7 @@ export default function Skills() {
         <h1 className="text-white flex justify-center items-center text-md sm:text-md lg:text-md ">
           Explore my
         </h1>
-        <h1 className="text-white flex justify-center items-center text-2xl sm:text-5xl lg:text-5xl font-bold">
+        <h1 className=" flex justify-center items-center text-2xl sm:text-5xl lg:text-5xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
           Techstack
         </h1>
       </div>
@@ -86,10 +86,16 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="bg-black border border-white hover:bg-white hover:text-black text-white py-4 px-4 rounded-md text-center shadow  transition flex flex-col items-center"
+            className="relative bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-4 px-4 rounded-md text-center shadow flex flex-col items-center justify-center transition-all duration-500 ease-in-out group"
           >
-            {skill.icon}
-            <span className="mt-2 text-sm">{skill.name}</span>
+            {/* Absolute div for solid background transition */}
+            <div className="absolute inset-0 bg-black border border-white transition-all duration-300 ease-in-out group-hover:bg-transparent z-0"></div>
+
+            {/* Skill icon and text content */}
+            <div className="relative z-10 text-center flex flex-col justify-center items-center">
+              {skill.icon}
+              <span className="mt-2 text-sm font-semibold">{skill.name}</span>
+            </div>
           </div>
         ))}
       </div>
