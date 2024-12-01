@@ -86,7 +86,7 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="relative bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-4 px-4 rounded-md text-center shadow flex flex-col items-center justify-center transition-all duration-500 ease-in-out group"
+            className="relative bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:text-black py-4 px-4 rounded-md text-center shadow flex flex-col items-center justify-center transition-all duration-500 ease-in-out group"
           >
             {/* Absolute div for solid background transition */}
             <div className="absolute inset-0 bg-black border border-white transition-all duration-300 ease-in-out group-hover:bg-transparent z-0"></div>
@@ -94,7 +94,7 @@ export default function Skills() {
             {/* Skill icon and text content */}
             <div className="relative z-10 text-center flex flex-col justify-center items-center">
               {skill.icon}
-              <span className="mt-2 text-sm font-semibold">{skill.name}</span>
+              <span className="mt-2 text-sm font-semibold ">{skill.name}</span>
             </div>
           </div>
         ))}

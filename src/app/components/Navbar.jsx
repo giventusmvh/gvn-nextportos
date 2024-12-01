@@ -16,16 +16,19 @@ const navLink = [
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-90 ">
+    <nav className="fixed top-0 left-0 right-0 z-20 bg-[#121212]/30 backdrop-blur-md  border-b border-white">
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-3 md:max-w-[1400px]">
-        <Link href={"/"} className="text-4xl text-white">
+        <Link
+          href={"/"}
+          className="text-4xl text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200 font-semibold font-sans"
+        >
           <Image
             src={"/images/sign-white2.png"}
             alt="logo"
             width={140}
             height={50}
           />
-          {/* {"<gvn />"} */}
+          {/* {"GM"} */}
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
