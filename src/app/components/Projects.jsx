@@ -173,6 +173,17 @@ const projectsData = [
     link: "https://testflight.apple.com/join/hXoNS9l0",
     github: "https://github.com/PitchMatch-ADA/PitchMatch-App",
   },
+  {
+    id: 16,
+    title: "Crypto Indicators Bot",
+    description:
+      "Discord bot with crypto indicators based on CMP, RSI, EMA, Delta, Liquidity, and Trend Bias. I create this using python with binance APIs, pandas, and numpy. This project is private because i use my own binance secret key to create this project.",
+    image: "/images/projects/botcrypto.png",
+    tag: ["All", "Python"],
+    techStack: ["Python"],
+    link: "-",
+    github: "-",
+  },
 ];
 
 const Projects = () => {
@@ -211,6 +222,11 @@ const Projects = () => {
           name="Mobile"
           onClick={handleTagChange}
           isSelected={tag == "Mobile"}
+        />
+        <ProjectTag
+          name="Python"
+          onClick={handleTagChange}
+          isSelected={tag == "Python"}
         />
       </div>
       <div className="grid md:grid-cols-3 gap-8 md:gap-6">

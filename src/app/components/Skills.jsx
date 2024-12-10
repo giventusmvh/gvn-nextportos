@@ -8,6 +8,7 @@ import {
   FaGithub,
   FaNodeJs,
   FaJava,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -69,6 +70,7 @@ export default function Skills() {
     { name: "Git", icon: <FaGitAlt className="text-red-500 text-2xl" /> },
     { name: "GitHub", icon: <FaGithub className="text-white text-2xl" /> },
     { name: "Java", icon: <FaJava className="text-cyan-500 text-2xl" /> },
+    { name: "Python", icon: <FaPython className="text-yellow-500 text-2xl" /> },
   ];
 
   return (
