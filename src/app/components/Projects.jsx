@@ -17,7 +17,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Older Portofolio",
+    title: "Older Portfolio",
     description:
       "My older portfolio website made with vanilla html, tailwind, javascript",
     image: "/images/projects/vanillaporto.png",

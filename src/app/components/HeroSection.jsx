@@ -24,7 +24,7 @@ export default function HeroSection() {
         </div>
         <div className="col-span-7 place-self-center text-center sm:text-center">
           <h1 className="text-white mb-4 text-2xl sm:text-5xl lg:text-5xl font-extrabold">
-            <span className="text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
+            <span className="text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 via-mid-500 to-secondary-400 hover:bg-slate-200">
               Hello, I&apos;m Giventus Marco{" "}
             </span>
             <br />

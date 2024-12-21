@@ -19,6 +19,8 @@ import {
   SiFramer,
   SiSwift,
   SiSwiftui,
+  SiCocoapods,
+  SiFirebase,
 } from "react-icons/si";
 
 export default function Skills() {
@@ -64,8 +66,16 @@ export default function Skills() {
     },
     { name: "UIKit", icon: <SiSwift className="text-teal-500 text-2xl" /> },
     {
+      name: "Cocoapods",
+      icon: <SiCocoapods className="text-red-200 text-2xl" />,
+    },
+    {
       name: "Apple Frameworks",
       icon: <SiSwift className="text-gray-200 text-2xl" />,
+    },
+    {
+      name: "Firebase",
+      icon: <SiFirebase className="text-orange-200 text-2xl" />,
     },
     { name: "Git", icon: <FaGitAlt className="text-red-500 text-2xl" /> },
     { name: "GitHub", icon: <FaGithub className="text-white text-2xl" /> },
