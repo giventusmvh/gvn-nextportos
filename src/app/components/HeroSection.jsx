@@ -21,6 +21,17 @@ export default function HeroSection() {
               />
             </span>
           </div>
+          {/* <div className="px-[2px] py-[2px] rounded-full bg-[#ffffff] w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] relative">
+            <span className="block bg-[#121212] rounded-full w-full h-full relative ease-in-out duration-200">
+              <Image
+                src="/images/given2.png"
+                alt="heroimage"
+                width={176}
+                height={176}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[176px] h-[176px] lg:w-[196px] lg:h-[196px] rounded-full object-cover"
+              />
+            </span>
+          </div> */}
         </div>
         <div className="col-span-7 place-self-center text-center sm:text-center">
           <h1 className="text-white mb-4 text-2xl sm:text-5xl lg:text-5xl font-extrabold">

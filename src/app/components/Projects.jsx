@@ -17,14 +17,14 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Older Portfolio",
+    title: "Indiego",
     description:
-      "My older portfolio website made with vanilla html, tailwind, javascript",
-    image: "/images/projects/vanillaporto.png",
+      "Website to order for psychology services, built with fulstack Laravel MVC for my intern at PT Talenta Sinergi Group and my undergraduate thesis, preview not available, only the code.",
+    image: "/images/projects/indiego.png",
     tag: ["All", "Web"],
-    techStack: ["HTML", "TailwindCSS", "Javascript"],
+    techStack: ["Laravel", "TailwindCSS", "Javascript"],
     link: "https://giventusmarco.vercel.app/",
-    github: "https://github.com/giventusmvh/giventusmarco",
+    github: "https://github.com/giventusmvh/indiego-skripsi",
   },
   {
     id: 3,
