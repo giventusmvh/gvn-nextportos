@@ -19,7 +19,7 @@ const projectsData = [
     id: 2,
     title: "Indiego",
     description:
-      "Website to order for psychology services, built with fulstack Laravel MVC for my intern at PT Talenta Sinergi Group and my undergraduate thesis, preview not available, only the code.",
+      "Fullstack Website to order for psychology services, built with Laravel MVC for my intern at PT Talenta Sinergi Group and my undergraduate thesis, preview not available, only the code.",
     image: "/images/projects/indiego.png",
     tag: ["All", "Web"],
     techStack: ["Laravel", "TailwindCSS", "Javascript"],
