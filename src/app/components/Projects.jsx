@@ -175,6 +175,28 @@ const projectsData = [
   },
   {
     id: 16,
+    title: "GitHub Followers",
+    description:
+      "App to see github followers of a selected user. Built programmatically with UIKit, tried to implement iOS development best practices, some of the code still have comments for learning purposes.",
+    image: "/images/projects/ghfollowers.png",
+    tag: ["All", "Mobile"],
+    techStack: ["Swift", "UIKit", "AVFoundation", "MVC"],
+    link: "-",
+    github: "https://github.com/giventusmvh/GitHubFollowers",
+  },
+  {
+    id: 17,
+    title: "PokeDex",
+    description:
+      "An app that displayed up to third gen pokemon using pokemon api",
+    image: "/images/projects/pokedex3.png",
+    tag: ["All", "Mobile"],
+    techStack: ["Swift", "SwiftUI", "Core Data", "MVVM"],
+    link: "-",
+    github: "https://github.com/giventusmvh/PokeDex3",
+  },
+  {
+    id: 18,
     title: "Crypto Indicators Bot",
     description:
       "Discord bot with crypto indicators based on CMP, RSI, EMA, Delta, Liquidity, and Trend Bias. I create this using python with binance APIs, pandas, and numpy. This project is private because i use my own binance secret key to create this project.",

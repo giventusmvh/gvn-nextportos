@@ -66,6 +66,10 @@ export default function Skills() {
     },
     { name: "UIKit", icon: <SiSwift className="text-teal-500 text-2xl" /> },
     {
+      name: "Core Data",
+      icon: <SiSwift className="text-pink-200 text-2xl" />,
+    },
+    {
       name: "Cocoapods",
       icon: <SiCocoapods className="text-red-200 text-2xl" />,
     },
