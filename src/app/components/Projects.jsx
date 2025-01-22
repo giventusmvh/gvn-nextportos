@@ -112,12 +112,24 @@ const projectsData = [
   },
   {
     id: 11,
+    title: "Nyanting",
+    description:
+      "Nyanting offers real-time guidance, enhances accuracy, and provides a more accessible learning environment for both beginners and seasoned artisans, using Apple Watch as companion during the process with reminders and feedback.",
+    image: "/images/projects/nyanting.png",
+    tag: ["All", "Mobile"],
+    techStack: ["Swift", "SwiftUI", "Watch Connectivity", "Machine Learning"],
+    link: "",
+    github: "https://github.com/Alas-Purwo/nyanting",
+  },
+  {
+    id: 12,
     title: "Pulse",
     description:
       "iOS and watchOS app designed to empower women by providing them with a reliable tool to monitor their heart rates and send emergency notifications when necessary.",
     image: "/images/projects/pulse.png",
     tag: ["All", "Mobile"],
     techStack: [
+      "Swift",
       "SwiftUI",
       "UIKit",
       "MVVM",
@@ -130,7 +142,7 @@ const projectsData = [
     github: "https://github.com/dinda-ayu-syafitri/MC3",
   },
   {
-    id: 12,
+    id: 13,
     title: "Don't Slip",
     description:
       "Game contains challenging task of keeping a penguin balanced on a constantly shifting iceberg. The player must use precise tilts and jumps to prevent the penguin from slipping off.",
@@ -141,18 +153,18 @@ const projectsData = [
     github: "https://github.com/althafnafi/dont-slip",
   },
   {
-    id: 13,
+    id: 14,
     title: "iAm Notes",
     description:
       "iAm is designed to help users log their emotions and thoughts in a structured and meaningful way. The core idea is simple: allow users to log notes based on their emotions.",
     image: "/images/projects/iam.png",
     tag: ["All", "Mobile"],
-    techStack: ["Swift", "SwiftData", "MVVM"],
+    techStack: ["Swift", "SwiftUI", "SwiftData", "MVVM"],
     link: "https://testflight.apple.com/join/6E212fbe",
     github: "https://github.com/danieliank/iAm",
   },
   {
-    id: 14,
+    id: 15,
     title: "Protake",
     description:
       "Designed to help users monitor and log their daily protein intake, with a recommended goal of up to 100 grams of protein per day to support muscle growth.",
@@ -163,7 +175,7 @@ const projectsData = [
     github: "https://github.com/giventusmvh/ProteinIntake.git",
   },
   {
-    id: 15,
+    id: 16,
     title: "Pitch Match",
     description:
       "PitchMatch will analyze your voice, using the help of Apple Audio technology, SpeechKit and Machine Learning, then displaying the result as a score for you.",
@@ -174,7 +186,7 @@ const projectsData = [
     github: "https://github.com/PitchMatch-ADA/PitchMatch-App",
   },
   {
-    id: 16,
+    id: 17,
     title: "GitHub Followers",
     description:
       "App to see github followers of a selected user. Built programmatically with UIKit, tried to implement iOS development best practices, some of the code still have comments for learning purposes.",
@@ -185,7 +197,7 @@ const projectsData = [
     github: "https://github.com/giventusmvh/GitHubFollowers",
   },
   {
-    id: 17,
+    id: 18,
     title: "PokeDex",
     description:
       "An app that displayed up to third gen pokemon using pokemon api",
@@ -196,7 +208,7 @@ const projectsData = [
     github: "https://github.com/giventusmvh/PokeDex3",
   },
   {
-    id: 18,
+    id: 19,
     title: "Crypto Indicators Bot",
     description:
       "Discord bot with crypto indicators based on CMP, RSI, EMA, Delta, Liquidity, and Trend Bias. I create this using python with binance APIs, pandas, and numpy. This project is private because i use my own binance secret key to create this project.",
