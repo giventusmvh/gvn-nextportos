@@ -10,6 +10,8 @@ export default function TypingAnimation() {
         1000,
         "a Fullstack Engineer",
         1000,
+        "an UI/UX Designer",
+        1000,
       ]}
       wrapper="span"
       speed={50}

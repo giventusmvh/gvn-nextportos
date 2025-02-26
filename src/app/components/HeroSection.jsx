@@ -47,10 +47,15 @@ export default function HeroSection() {
               {" "}
               iOS Developer
             </span>{" "}
-            and{" "}
+            , a{" "}
             <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
               {" "}
               Fullstack Engineer
+            </span>{" "}
+            ,and an{" "}
+            <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
+              {" "}
+              UI/UX Designer
             </span>{" "}
             specializing in building dynamic web apps and intuitive iOS
             solutions using React, Node.js, and Swift. I&apos;m passionate about

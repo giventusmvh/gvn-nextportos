@@ -22,6 +22,7 @@ import {
   SiCocoapods,
   SiFirebase,
 } from "react-icons/si";
+import { FaFigma } from "react-icons/fa6";
 
 export default function Skills() {
   const skills = [
@@ -82,9 +83,9 @@ export default function Skills() {
       icon: <SiFirebase className="text-orange-200 text-2xl" />,
     },
     { name: "Git", icon: <FaGitAlt className="text-red-500 text-2xl" /> },
-    { name: "GitHub", icon: <FaGithub className="text-white text-2xl" /> },
     { name: "Java", icon: <FaJava className="text-cyan-500 text-2xl" /> },
     { name: "Python", icon: <FaPython className="text-yellow-500 text-2xl" /> },
+    { name: "Figma", icon: <FaFigma className="text-white text-2xl" /> },
   ];
 
   return (
