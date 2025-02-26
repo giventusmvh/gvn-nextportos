@@ -218,6 +218,17 @@ const projectsData = [
     link: "-",
     github: "-",
   },
+  {
+    id: 20,
+    title: "Macroverse Web Design",
+    description:
+      "Macroverse is an information media for finance, crypto, and forex. This is the website design i make for Macroverse. Already got responsive design for both desktop and mobile.",
+    image: "/images/projects/macroversecover.png",
+    tag: ["All", "UI/UX Design"],
+    techStack: ["Figma"],
+    link: "https://www.figma.com/design/M3JjPoEHXdUpjxSiqi5yIu/Macroverse?node-id=24-1422&t=9uChZPpPoEZnodlN-1",
+    github: "-",
+  },
 ];
 
 const Projects = () => {
@@ -241,7 +252,7 @@ const Projects = () => {
           Projects
         </h1>
       </div>
-      <div className="flex flex-row justify-center items-center gap-2 text-white my-6">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-2 text-white my-6">
         <ProjectTag
           name="All"
           onClick={handleTagChange}
@@ -261,6 +272,11 @@ const Projects = () => {
           name="Python"
           onClick={handleTagChange}
           isSelected={tag == "Python"}
+        />
+        <ProjectTag
+          name="UI/UX Design"
+          onClick={handleTagChange}
+          isSelected={tag == "UI/UX Design"}
         />
       </div>
       <div className="grid md:grid-cols-3 gap-8 md:gap-6">
