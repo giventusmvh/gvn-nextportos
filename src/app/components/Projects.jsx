@@ -229,6 +229,17 @@ const projectsData = [
     link: "https://www.figma.com/design/M3JjPoEHXdUpjxSiqi5yIu/Macroverse?node-id=24-1422&t=9uChZPpPoEZnodlN-1",
     github: "-",
   },
+  {
+    id: 21,
+    title: "ShopEase Web Design",
+    description:
+      "ShopEase is a fictional e-commerce, I create this design using figma with modern e-commerce design in mind.",
+    image: "/images/projects/shopeasecover.png",
+    tag: ["All", "UI/UX Design"],
+    techStack: ["Figma"],
+    link: "https://www.figma.com/design/o11H0BcP2EVsfNoGn8F0Vv/E-Commerce-Landing-Page?node-id=3-224&t=Je9Z9ELZ1us9zUQu-1",
+    github: "-",
+  },
 ];
 
 const Projects = () => {
