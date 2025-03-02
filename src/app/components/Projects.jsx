@@ -240,6 +240,17 @@ const projectsData = [
     link: "https://www.figma.com/design/o11H0BcP2EVsfNoGn8F0Vv/E-Commerce-Landing-Page?node-id=3-224&t=Je9Z9ELZ1us9zUQu-1",
     github: "-",
   },
+  {
+    id: 22,
+    title: "FaithMind App Design",
+    description:
+      "FaithMind is a gamified app to encourage user to do more Bible reading, I conduct this design by research first, the research flow is available on the figma page.",
+    image: "/images/projects/faithmindcover.png",
+    tag: ["All", "UI/UX Design"],
+    techStack: ["Figma"],
+    link: "https://www.figma.com/design/VleBX3HzieVCE7fJ1WK9il/FaithMind---Gamified-Bible-Reading-App?node-id=0-1&t=dVrIcsZqNeRok0k3-1",
+    github: "-",
+  },
 ];
 
 const Projects = () => {
