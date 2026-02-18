@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "./BlogCard";
 import { motion } from "framer-motion";
-import { FaNewspaper, FaRss } from "react-icons/fa";
+import { FaNewspaper, FaRss, FaArrowRight } from "react-icons/fa";
 
 const BlogSection = () => {
   const [blogs, setBlogs] = useState([]);
@@ -27,7 +27,7 @@ const BlogSection = () => {
   };
 
   const featuredBlog = blogs[0] || null;
-  const restBlogs = blogs.slice(1);
+  const restBlogs = blogs.slice(1, 4); // Limit to 3 items in the side list (1 featured + 3 side = 4 total)
 
   if (loading) {
     return (
@@ -100,9 +100,16 @@ const BlogSection = () => {
             </span>
           </h2>
         </div>
-        <div className="hidden md:flex items-center gap-2 text-[#ADB7BE] text-sm font-medium">
-          <FaRss className="text-primary-400" />
-          <span>{blogs.length} posts</span>
+
+        <div className="flex items-center gap-4">
+          {/* View All Button */}
+          <motion.a
+            href="/blog"
+            whileHover={{ x: 5 }}
+            className="hidden md:flex items-center gap-2 text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors"
+          >
+            View All Posts <FaArrowRight />
+          </motion.a>
         </div>
       </motion.div>
 
@@ -153,22 +160,20 @@ const BlogSection = () => {
             </motion.div>
           ))}
 
-          {/* Fallback if only 1 post exists */}
-          {restBlogs.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="h-full flex items-center justify-center bg-[#181818] rounded-xl border border-white/5 min-h-[200px]"
+          {/* View All Button for Mobile */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="md:hidden mt-4"
+          >
+            <a
+              href="/blog"
+              className="flex items-center justify-center w-full py-3 bg-white/5 rounded-xl text-sm font-bold text-primary-400 border border-white/10 hover:bg-white/10 transition-all"
             >
-              <div className="text-center p-8">
-                <FaNewspaper className="text-3xl text-gray-600 mx-auto mb-3" />
-                <p className="text-gray-500 text-sm font-medium">
-                  More articles coming soon
-                </p>
-              </div>
-            </motion.div>
-          )}
+              View All Posts
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
