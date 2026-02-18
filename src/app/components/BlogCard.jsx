@@ -36,7 +36,7 @@ export default function BlogCard({
       whileTap="tap"
       variants={variants}
       className={`group relative bg-[#181818] rounded-xl overflow-hidden border border-white/5 shadow-lg flex ${
-        isFeatured ? "flex-col h-full" : "flex-row h-32 md:h-40"
+        isFeatured ? "flex-col h-full" : "flex-row h-auto min-h-[8rem] md:h-40"
       }`}
     >
       {/* Image Section */}

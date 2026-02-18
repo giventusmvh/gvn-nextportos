@@ -136,7 +136,7 @@ export default function Skills() {
             <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
               {skill.icon}
             </div>
-            <span className="text-gray-300 font-medium text-center">
+            <span className="text-gray-300 font-medium text-center text-sm lg:text-lg">
               {skill.name}
             </span>
           </motion.div>

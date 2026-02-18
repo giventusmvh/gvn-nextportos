@@ -41,7 +41,9 @@ export default function Navbar() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed top-4 left-0 right-0 mx-auto bg-[#121212]/80 backdrop-blur-md border border-white/10 rounded-full z-50 w-[90%] md:w-full md:max-w-7xl px-6 py-3 shadow-lg shadow-black/20"
+      className={`fixed top-4 left-0 right-0 mx-auto bg-[#121212]/80 backdrop-blur-md border border-white/10 z-50 w-[90%] md:w-full md:max-w-7xl px-6 py-3 shadow-lg shadow-black/20 transition-all duration-300 ${
+        navbarOpen ? "rounded-xl" : "rounded-full"
+      }`}
     >
       <div className="flex items-center justify-between">
         <Link
@@ -79,9 +81,17 @@ export default function Navbar() {
       </div>
       <AnimatePresence>
         {navbarOpen ? (
-          <div className="mt-4 bg-[#121212] rounded-xl p-4 border border-white/10 md:hidden">
-            <MenuOverlay links={navLinks} />
-          </div>
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden md:hidden"
+          >
+            <div className="mt-4 bg-[#121212] rounded-xl p-4 border border-white/10">
+              <MenuOverlay links={navLinks} />
+            </div>
+          </motion.div>
         ) : null}
       </AnimatePresence>
     </motion.nav>
