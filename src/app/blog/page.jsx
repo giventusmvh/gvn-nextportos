@@ -116,7 +116,7 @@ export default function BlogPage() {
         ) : (
           <div className="flex flex-col items-center justify-center py-20 text-center">
             <p className="text-gray-400 text-xl font-medium mb-4">
-              No articles found matching "{searchTerm}"
+              No articles found matching &quot;{searchTerm}&quot;
             </p>
             <button
               onClick={() => setSearchTerm("")}
