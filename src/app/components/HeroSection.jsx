@@ -2,110 +2,100 @@
 import Image from "next/image";
 import React from "react";
 import TypingAnimation from "./TypeAnimation";
-import { FaLinkedin, FaGithub, FaInstagram, FaMailBulk } from "react-icons/fa"; // Import icons
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section>
-      <div className="grid grid-cols-1 sm:grid-cols-1">
-        <div className="col-span-5 place-self-center mb-4 lg:mt-12 mt-8">
-          <div className="px-[2px] py-[2px] rounded-full bg-[#ffffff] w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] relative ">
-            <span className="block bg-[#121212]  rounded-full w-[176px] h-[176px] lg:w-[196px] lg:h-[196px] relative ease-in-out duration-200">
-              <Image
-                src="/images/hero-image.png"
-                alt="heroimage"
-                width={140}
-                height={140}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              />
-            </span>
+    <section className="lg:py-16">
+      <div className="grid grid-cols-1 sm:grid-cols-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-5 place-self-center mt-4 lg:mt-0"
+        >
+          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] relative overflow-hidden mx-auto">
+            <Image
+              src="/images/IMG_4172.PNG"
+              alt="hero image"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "center 15%" }}
+              priority
+            />
           </div>
-          {/* <div className="px-[2px] py-[2px] rounded-full bg-[#ffffff] w-[180px] h-[180px] lg:w-[200px] lg:h-[200px] relative">
-            <span className="block bg-[#121212] rounded-full w-full h-full relative ease-in-out duration-200">
-              <Image
-                src="/images/given2.png"
-                alt="heroimage"
-                width={176}
-                height={176}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-[176px] h-[176px] lg:w-[196px] lg:h-[196px] rounded-full object-cover"
-              />
-            </span>
-          </div> */}
-        </div>
-        <div className="col-span-7 place-self-center text-center sm:text-center">
-          <h1 className="text-white mb-4 text-2xl sm:text-5xl lg:text-5xl font-extrabold">
-            <span className="text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 via-mid-500 to-secondary-400 hover:bg-slate-200">
-              Hello, I&apos;m Giventus Marco{" "}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-7 place-self-center text-center sm:text-left justify-self-start"
+        >
+          <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+              Hello, I&apos;m{" "}
             </span>
             <br />
             <TypingAnimation />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-12 lg:text-xl sm:mt-12 sm:max-w-[800px] font-thin">
-            I&apos;m an{" "}
-            <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
-              {" "}
-              iOS Developer
-            </span>{" "}
-            , a{" "}
-            <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
-              {" "}
-              Fullstack Engineer
-            </span>{" "}
-            ,and an{" "}
-            <span className="font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200">
-              {" "}
-              UI/UX Designer
-            </span>{" "}
-            specializing in building dynamic web apps and intuitive iOS
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+            Specializing in building dynamic web apps and intuitive iOS
             solutions using React, Node.js, and Swift. I&apos;m passionate about
             creating seamless user experiences and delivering high-quality,
             scalable software.
           </p>
           <div>
-            <a href="https://wa.me/628112958568" target="_blank">
-              <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500  to-secondary-500 hover:bg-slate-200 text-white">
-                Hire me
-              </button>
+            <a
+              href="https://wa.me/628112958568"
+              target="_blank"
+              className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white font-semibold transition-all duration-300 inline-block text-center"
+            >
+              Hire Me
             </a>
-            <a href="/giventusmarco_cv.pdf" download="CV - Giventus Marco.pdf">
-              <button className="px-[2px] py-[2px] w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500  to-secondary-500 hover:bg-slate-800 text-white mt-3">
-                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-3">
-                  Download CV
-                </span>
-              </button>
+            <a
+              href="/giventusmarco_cv.pdf"
+              download="CV - Giventus Marco.pdf"
+              className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white transition-all duration-300 inline-block mt-3 sm:mt-0"
+            >
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 text-center">
+                Download CV
+              </span>
             </a>
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center gap-4 mt-6">
-            <a
+          <div className="flex justify-center sm:justify-start gap-4 mt-6">
+            <SocialIcon
               href="https://www.linkedin.com/in/giventus/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-            >
-              <FaLinkedin className="text-white text-xl" />
-            </a>
-            <a
+              icon={<FaLinkedin />}
+            />
+            <SocialIcon
               href="https://github.com/giventusmvh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-            >
-              <FaGithub className="text-white text-xl" />
-            </a>
-            <a
+              icon={<FaGithub />}
+            />
+            <SocialIcon
               href="mailto:giventusmrco@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-            >
-              <IoMdMail className="text-white text-xl" />
-            </a>
+              icon={<IoMdMail />}
+            />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
+  );
+}
+
+function SocialIcon({ href, icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 border-2 border-[#33353F] rounded-full flex items-center justify-center text-white text-2xl hover:border-white hover:bg-white/10 transition-all duration-300"
+    >
+      {icon}
+    </a>
   );
 }

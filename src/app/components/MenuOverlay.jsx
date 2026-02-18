@@ -1,26 +1,19 @@
-import { useState, useEffect } from "react";
-import Navlink from "./NavLink";
+import NavLink from "./NavLink";
+import { motion } from "framer-motion";
 
-export default function MenuOverlay({ links, visible }) {
-  const [animationClass, setAnimationClass] = useState("");
-
-  useEffect(() => {
-    if (visible) {
-      setAnimationClass("slide-down");
-    } else {
-      setAnimationClass("slide-up");
-    }
-  }, [visible]);
-
+export default function MenuOverlay({ links }) {
   return (
-    <div className={`menu-overlay ${animationClass}`}>
-      <ul className="flex flex-col items-center py-4">
-        {links.map((link, index) => (
-          <li key={index}>
-            <Navlink href={link.href} title={link.title} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <motion.ul
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="flex flex-col items-center gap-4"
+    >
+      {links.map((link, index) => (
+        <li key={index}>
+          <NavLink href={link.href} title={link.title} />
+        </li>
+      ))}
+    </motion.ul>
   );
 }

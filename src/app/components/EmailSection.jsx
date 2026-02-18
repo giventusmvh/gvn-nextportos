@@ -1,127 +1,178 @@
-import React from "react";
-import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa"; // Import icons
-import Link from "next/link";
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
+import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const EmailSection = () => {
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState(null); // 'success' | 'error' | null
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setStatus(null);
+
+    const formData = new FormData(e.target);
+    const body = {
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        e.target.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
-    // <section className="grid md:grid-cols-2 my-12 md:my-16 py-24 gap-4 relative">
     <section
       id="contact"
-      className="flex flex-col justify-center items-center text-center mt-24"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
-      {/* <div className="absolute w-80 h-80 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full blur-lg top-full -left-4 transform -translate-x-1/2 -translate-y-1/2"></div> */}
-      <div className="z-10">
-        <h5 className="text-xl md:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200 my-2">
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2 opacity-30"></div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="z-10"
+      >
+        <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m currently looking for new opportunities and projects. Whether
-          you have a question or just want to say hi, reach me out from any of
-          my social media below, I&apos;ll try my best to get back to you as
-          soon as possible!
+          I&apos;m currently looking for new opportunities, my inbox is always
+          open. Whether you have a question or just want to say hi, I&apos;ll
+          try my best to get back to you!
         </p>
-        <div className="flex justify-center gap-4 mt-6">
-          <a
-            href="https://www.linkedin.com/in/giventus/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-          >
-            <FaLinkedin className="text-white text-xl" />
-          </a>
-          <a
-            href="https://www.instagram.com/gvn.mzt/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-          >
-            <FaInstagram className="text-white text-xl" />
-          </a>
-          <a
+        <div className="socials flex flex-row gap-2">
+          <SocialIcon
             href="https://github.com/giventusmvh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-          >
-            <FaGithub className="text-white text-xl" />
-          </a>
-          <a
-            href="https://wa.me/628112958568"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-          >
-            <FaWhatsapp className="text-white text-xl" />
-          </a>
-          <a
+            icon={<FaGithub />}
+          />
+          <SocialIcon
+            href="https://www.linkedin.com/in/giventus/"
+            icon={<FaLinkedin />}
+          />
+          <SocialIcon
+            href="https://www.instagram.com/gvn.mzt/"
+            icon={<FaInstagram />}
+          />
+          <SocialIcon href="https://wa.me/628112958568" icon={<FaWhatsapp />} />
+          <SocialIcon
             href="mailto:giventusmrco@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center transition-all duration-300 ease-out  hover:bg-gradient-to-br from-secondary-500 to-primary-500  "
-          >
-            <IoMdMail className="text-white text-xl" />
-          </a>
+            icon={<IoMdMail />}
+          />
         </div>
-      </div>
-      {/* <div>
-        <form>
-          <div class="mb-6">
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <form className="flex flex-col" onSubmit={handleSubmit}>
+          <div className="mb-6">
             <label
-              for="email"
-              class="block mb-2 text-sm font-medium text-white"
+              htmlFor="email"
+              className="text-white block mb-2 text-sm font-medium"
             >
               Your email
             </label>
             <input
+              name="email"
               type="email"
               id="email"
-              class="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
-              placeholder="jacob@google.com"
               required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none focus:border-primary-500 transition-colors"
+              placeholder="jacob@google.com"
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="subject"
-              class="block mb-2 text-sm font-medium text-white"
+              htmlFor="subject"
+              className="text-white block mb-2 text-sm font-medium"
             >
               Subject
             </label>
             <input
+              name="subject"
               type="text"
               id="subject"
-              class="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none focus:border-primary-500 transition-colors"
               placeholder="Just saying hi"
             />
           </div>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="subject"
-              class="block mb-2 text-sm font-medium text-white"
+              htmlFor="message"
+              className="text-white block mb-2 text-sm font-medium"
             >
               Message
             </label>
             <textarea
+              name="message"
               id="message"
-              class="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 outline-none focus:border-primary-500 transition-colors h-32 resize-none"
               placeholder="Let's talk about..."
             />
           </div>
-          <div class="mb-6">
-            <button
-              type="submit"
-              class="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
-              {" "}
-              Send message{" "}
-            </button>
-          </div>
+
+          {status === "success" && (
+            <div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
+              ✅ Message sent successfully! I&apos;ll get back to you soon.
+            </div>
+          )}
+          {status === "error" && (
+            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+              ❌ Failed to send message. Please try again later.
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={sending}
+            className="bg-primary-500 hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-2.5 px-5 rounded-lg w-full transition-colors"
+          >
+            {sending ? "Sending..." : "Send Message"}
+          </button>
         </form>
-      </div> */}
+      </motion.div>
     </section>
   );
 };
+
+function SocialIcon({ href, icon }) {
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      className="text-white text-3xl hover:text-white/80 transition-colors"
+    >
+      {icon}
+    </Link>
+  );
+}
 
 export default EmailSection;

@@ -1,65 +1,89 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import Navlink from "./NavLink";
+import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 
-const navLink = [
+const navLinks = [
   { title: "About", href: "#about" },
-  { title: "Skill", href: "#skill" },
-  { title: "Projects", href: "#project" },
+  { title: "Skills", href: "#skills" },
+  { title: "Projects", href: "#projects" },
+  { title: "Blog", href: "#blog" },
   { title: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <nav className="mx-auto fixed top-5 left-0 right-0 z-20 bg-[#121212]/30 backdrop-blur-md  border border-white md:max-w-[1400px] rounded-full max-w-[95%]">
-      <div className="flex flex-wrap items-center justify-center mx-auto px-4 py-3 md:max-w-[1400px]">
-        {/* <Link
+    <motion.nav
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="fixed top-4 left-0 right-0 mx-auto bg-[#121212]/80 backdrop-blur-md border border-white/10 rounded-full z-50 w-[90%] md:w-full md:max-w-7xl px-6 py-3 shadow-lg shadow-black/20"
+    >
+      <div className="flex items-center justify-between">
+        <Link
           href={"/"}
-          className="text-4xl text-transparent bg-clip-text  bg-gradient-to-r from-primary-600 to-secondary-400 hover:bg-slate-200 font-normal font-sans"
+          className="text-lg font-bold text-white tracking-wider"
         >
-          <Image
-            src={"/images/sign-white2.png"}
-            alt="logo"
-            width={140}
-            height={50}
-          />
-          {"GiventusMarco"}
-        </Link> */}
-        {/* <div className="mobile-menu block md:hidden">
+          GIVENTUS MARCO
+        </Link>
+        <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="text-white flex items-center px-3 py-2 rounded border border-slate-200"
+              className="flex items-center text-slate-200 hover:text-white"
             >
-              <Bars3Icon className="w-5 h-5" />
+              <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="text-white flex items-center px-3 py-2 rounded border border-slate-200"
+              className="flex items-center text-slate-200 hover:text-white"
             >
-              <XMarkIcon className="w-5 h-5" />
+              <XMarkIcon className="h-5 w-5" />
             </button>
           )}
-        </div> */}
-        <div className="menu block md:w-auto" id="navbar">
-          <ul className="flex p-0 md:p-0 md:flex-row md:space-x-14 mt-0">
-            {navLink.map((link, index) => (
+        </div>
+        <div className="menu hidden md:block md:w-auto" id="navbar">
+          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
+            {navLinks.map((link, index) => (
               <li key={index}>
-                <Navlink href={link.href} title={link.title} />
+                <NavLink href={link.href} title={link.title} />
               </li>
             ))}
           </ul>
         </div>
       </div>
-      {navbarOpen ? (
-        <MenuOverlay links={navLink} visible={navbarOpen ? true : false} />
-      ) : null}
-    </nav>
+      <AnimatePresence>
+        {navbarOpen ? (
+          <div className="mt-4 bg-[#121212] rounded-xl p-4 border border-white/10 md:hidden">
+            <MenuOverlay links={navLinks} />
+          </div>
+        ) : null}
+      </AnimatePresence>
+    </motion.nav>
   );
 }
